@@ -39,3 +39,5 @@ build/
 
 # Ignore API key file
 src/main/resources/configuration.properties
+
+src/main/resources/configuration.properties/target/
