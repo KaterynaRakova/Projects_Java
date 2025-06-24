@@ -1,0 +1,63 @@
+/* Фон и базовые настройки */
+body {
+    background-color: rgb(252, 194, 3);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+/* Основной белый блок */
+.container {
+    background: rgba(252, 194, 3, 0.85); /* Полупрозрачный жёлтый */
+    border: 5px solid #000;              /* Чёрная рамка */
+    border-radius: 12px;
+    padding: 25px 30px;                  /* Чуть меньше отступы */
+    min-width: 180px;                    /* Уменьшаем форму */
+    max-width: 240px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.65em; /* 👈 уменьшает всё внутри на ~8% */
+    /* Более выразительная глубокая тень */
+    box-shadow: 0 0 25px 6px rgba(0, 0, 0, 0.8);
+}
+/* Заголовок */
+
+h2 {
+    margin-top: 3px;                       /* 👈 немного поднимаем вверх */
+    margin-bottom: 20px;                     /* 👈 увеличиваем расстояние до формы */
+    color: #000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+
+/* Поля формы */
+input, select, button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* Кнопка */
+button {
+    background-color: #222;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+/* Результат конвертации */
+p {
+    margin-top: 20px;
+    font-size: 1.1em;
+}

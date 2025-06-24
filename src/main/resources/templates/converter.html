@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+<h2>Currency Converter</h2>
+<form action="/convert" method="get">
+    <label>From:
+        <input type="text" name="from" list="currencyList" th:value="${from}" required />
+    </label><br><br>
+
+    <label>To:
+        <input type="text" name="to" list="currencyList" th:value="${to}" required />
+    </label><br><br>
+
+    <datalist id="currencyList">
+        <option th:each="c : ${currencies}" th:value="${c}" />
+    </datalist>
+
+    <label>Amount:
+        <input type="number" name="amount" step="0.01" placeholder="100.00"
+               th:value="${amount}" required />
+    </label><br><br>
+
+    <button type="submit">Convert</button>
+</form>
+
+<!-- Отображение результата -->
+<div th:if="${convertedAmount != null}">
+    <p>
+        <strong th:text="${amount}">amount</strong>
+        <span th:text="${from}">FROM</span> =
+        <strong th:text="${convertedAmount}">converted</strong>
+        <span th:text="${to}">TO</span>
+    </p>
+</div>
+<div th:if="${error != null}">
+    <p style="color:red;" th:text="${error}"></p>
+</div>
+</div>
+</body>
+</html>
